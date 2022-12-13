@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&family=Redressed&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&family=Redressed&display=swap");
+* {
+  color: rgba(78, 4, 68, 0.932);
+}
+
+i {
+  color: #f7f3f4;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+main {
+  min-height: calc(100vh - 106px);
+}
+
+.banner {
+  background-position-y: 50%;
+  width: 100%;
+  max-height: 650px;
+  overflow: hidden;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  position: relative;
+  top: -150px;
+}
+
+.parrafos {
+  width: 90%;
+  margin: 20px auto;
+  display: -ms-grid;
+  display: grid;
+  text-align: justify;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+  gap: 8px;
+  grid-area: parafos-header;
+      grid-template-areas: "parrafo1 parrafo1 " "parrafo2 parrafo3";
+}
+
+.parrafos {
+  margin: 20px auto;
+  width: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  word-spacing: 2px;
+  font-size: 1.5rem;
+  word-spacing: 0.6px;
+  font-family: "Redressed", cursive;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
+  gap: 10px;
+      grid-template-areas: "parra1 parra1" "parra2 parra3";
+}
+
+.parra1 {
+  color: burlywood;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: parra1;
+  padding: 20px;
+}
+
+.parra2 {
+  color: #f0ab51;
+  padding: 25px;
+}
+
+.parra3 {
+  color: #b96c06;
+  padding: 25px;
+}
+
+.bg-navbarcolor {
+  background-color: rgba(78, 4, 68, 0.932);
+  font-family: "Lobster Two", "Redressed", cursive;
+  color: #f7f3f4;
+}
+
+h1 {
+  font-family: "Lobster Two", "Redressed", cursive;
+}
+
+/* quienes somos webpage */
+.quienes-somos p {
+  font-family: "Lobster Two", "Redressed", cursive;
+  text-align: justify;
+}
+
+.quienes-somos .imagen-quienes-somos {
+  background-position-y: 50%;
+  width: 100%;
+  max-height: 650px;
+  overflow: hidden;
+}
+
+.quienes-somos .imagen-quienes-somos img {
+  width: 100%;
+  display: block;
+  position: relative;
+  top: 0px;
+}
+
+/* productos webpage */
+.product-container {
+  gap: 0.5rem;
+}
+
+.product-container .product-item {
+  background-color: #ccc;
+  width: 100%;
+  max-width: 24.46%;
+  height: 300px;
+}
+
+.botones {
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: auto;
+}
+
+.fa-solid {
+  color: rgba(78, 4, 68, 0.932);
+}
+
+/* servicios webpage */
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Lobster Two", "Redressed", cursive;
+}
+
+.contact-list .fa-solid {
+  color: rgba(78, 4, 68, 0.932);
+}
+
+/* contactenos webpage */
+.map-container {
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.map-container img {
+  width: 100%;
+}
+
+.product-item {
+  margin: 0;
+  padding: 50px;
+  min-height: 450px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form-group {
+  font-family: "Lobster Two", "Redressed", cursive;
+}
+
+/* footer */
+.bg-footercolor {
+  background-color: rgba(78, 4, 68, 0.932);
+  font-family: "Lobster Two", "Redressed", cursive;
+  color: #f7f3f4;
+  width: auto;
+}
+
+.bg-footercolor small {
+  color: #f7f3f4;
+}
+
+.social-media ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+}
+
+.social-media ul li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.social-media ul li a .fa-brands {
+  color: #fff;
+}
+
+/* media query */
+@media only screen and (max-width: 768px) {
+  .banner img {
+    top: 0;
+  }
+  .product-item {
+    padding: 20px;
+  }
+}
+/*# sourceMappingURL=mian.css.map */

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=Redressed&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=Redressed&display=swap');
+
+$background: rgb(238, 168, 229);
+$backgroundfooter: rgba(218, 117, 204, 0.932);
+$font-colorp:  rgba(78, 4, 68, 0.932);
+$font-colorw: rgb(247, 243, 244);
+$font-colorb: rgb(7, 6, 7);
+$p-font-weight: 300;
+$h-font-weight: bold;
+$font-type: 'Roboto', sans-serif;
+$font-type2: 'Lobster Two', 'Redressed', cursive;
+
+// Mixins
+
+@mixin navbar-color {
+    background-color: $font-colorp;
+    font-family: $font-type2;
+    color: $font-colorw;
+}
+
+@mixin footer-color {
+    background-color: $font-colorp;
+    font-family: $font-type2;
+    color: $font-colorw;
+}
