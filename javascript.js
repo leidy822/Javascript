@@ -34,7 +34,7 @@ const articulos = [
 //find//
 
 let pregunta = prompt(`Que producto buscas ${preguntaNombre}?`);
-let busqueda = articulos.find(item => item.producto === pregunta );
+let busqueda = articulos.find(item => item.producto.toUpperCase() === pregunta.toUpperCase());
 
 let mensajeB = `
     Nombre : ${busqueda.producto}
@@ -42,9 +42,13 @@ let mensajeB = `
 `;
 alert(mensajeB);
 
+
 //filter//
 
 let pregunta2 = parseInt(prompt(`Que valor maximo buscas ${preguntaNombre}?`));
+
+
+
 let busqueda2 = articulos.filter(item => item.precio < pregunta2);
 busqueda2.forEach(item => {
     let mensajeB2 =`
@@ -54,16 +58,36 @@ busqueda2.forEach(item => {
 alert(mensajeB2);
 });
 
-let producto = prompt(`Que producto deseas ${preguntaNombre}`);
-let cantidad = prompt(" Cuantos productos deseas de esta unidad?");
-const precio = articulos.map(item => item.precio);
-const articulo = articulos.map(item => item.producto);
+let arr = [];
 
 
-function compra(precio, articulo) {
-    let resultado = articulo * precio;
-};
-let respuesta = (`Tu valor es ${resultado}`);
-alert(respuesta)
+let flag = true;
+
+// se ejecuta si flag = verdadero;
+while(flag){
+    let producto = prompt(`Que producto deseas ${preguntaNombre}`);
+    let cantidad = prompt(" Cuantos productos deseas de esta unidad?");
+    arr.push({producto, cantidad});
+    let seguir = prompt("Desea seguir comprando? Ingrese Y para si y N para no.");
+    if(seguir === 'N'){
+        flag = false; // si no quiero seguir comprando, necesito que el flag sea falso
+    }
+}
+
+let mensaje = "";
+let precioTotal = 0;
+
+for(let i=0; i<arr.length; i++){
+let art = articulos.find(item => item.producto === arr[i].producto);
+
+mensaje+=`${art.producto} x ${arr[i].cantidad} precio por unidad ${art.precio}\n`;
+precioTotal+= (art.precio*arr[i].cantidad); // 15 *3
+}
+
+let mensaje2 = `Factura digital\n${mensaje}\nPrecio total = $${precioTotal}`;
+
+alert(mensaje2);
+
+
 
 
