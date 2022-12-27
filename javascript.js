@@ -1,12 +1,12 @@
 //solo es la pagina de productos//
 
-let preguntaNombre = prompt("Cual es tu nombre ?");
+/* let preguntaNombre = prompt("Cual es tu nombre ?");
 let respuestaNombre = (`Bienvenid@ ${preguntaNombre} a Makeup LC`); 
 alert(respuestaNombre);
 
 let informacion = ("Estas en seccion productos Makeup LC, espero que puedas elegir algo que te guste... Nuevamente bienvenid@"); 
 alert(informacion);
-
+ */
 /* functiones de orden superior */
 
 const articulos = [
@@ -62,7 +62,7 @@ let arr = [];
 
 
 let flag = true;
-
+/* 
 // se ejecuta si flag = verdadero;
 while(flag){
     let producto = prompt(`Que producto deseas ${preguntaNombre}`);
@@ -87,6 +87,44 @@ precioTotal+= (art.precio*arr[i].cantidad); // 15 *3
 let mensaje2 = `Factura digital\n${mensaje}\nPrecio total = $${precioTotal}`;
 
 alert(mensaje2);
+ */
+
+let idCarrito = [];
+localStorage.clear();
+
+
+let variable = document.getElementById("contenedor");
+
+    function ejecutar(id){
+    idCarrito.push(id);
+    localStorage.setItem("arreglo", idCarrito);
+    alert(`El articulo Nro:${id} ha sido agregado exitosamente al carrito`);
+   }
+
+articulos.forEach(articulo =>{
+    
+    variable.innerHTML+= `
+    <div class="col-lg-4 text-center product-item">
+            <div class="product-title">
+              <h5>${articulo.producto}</h5>
+            </div>
+            <img src="${articulo.img}" alt="galeria productos">
+            <div class="botones">
+              <div class="product-precio py-3">
+                <i class="fa-solid fa-coins"></i></li><span>$${articulo.precio}</span>
+              </div>          
+              <span class="class text-center small"></span>
+              <button id="boton${articulo.id}" type="button" class="btn btn-outline-dark btn-sm ">Comprar</button>
+            </div>
+          </div>
+    `;
+ } )
+ 
+ articulos.forEach(item =>{
+    let boton = document.getElementById(`boton${item.id}`);
+    boton.addEventListener("click", () => ejecutar(item.id));
+
+ })
 
 
 
