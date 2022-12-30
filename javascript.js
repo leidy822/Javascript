@@ -14,7 +14,7 @@ console.log("Probando la consola");
 const articulos = [
     { id: 1, producto: "base de maquillaje", precio: 30.00, img:"../img/imagenes-productos/1.png" },
     { id: 2, producto: "corrector de ojeras", precio: 20.00, img:"../img/imagenes-productos/2.png" },
-    { id: 3, producto: "corector de ojeras colores", precio: 25.32, img:"../img/imagenes-productos/3.png" },
+    { id: 3, producto: "corrector de ojeras colores", precio: 25.32, img:"../img/imagenes-productos/3.png" },
     { id: 4, producto: "polvo compacto", precio: 35.00, img:"../img/imagenes-productos/4.png" },
     { id: 5, producto: "kit de brochas", precio: 42.00, img:"../img/imagenes-productos/5.png" },
     { id: 6, producto: "esponja de agarre", precio: 15.00, img:"../img/imagenes-productos/6.png" },
@@ -78,7 +78,8 @@ function cargarArticulosDelCarrito(articulos, id){
     
     `;
     total+=articulo.precio;
- } )
+  })
+  total = total.toFixed(2);
  mensaje+=`\nTotal: $${total}`
  variable.innerHTML+=`
  <div><p>${mensaje}</p></div>
