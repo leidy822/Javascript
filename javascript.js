@@ -32,16 +32,19 @@ const articulos = [
     { id: 18, producto: "sombras nude", precio: 38.00, img:"../img/imagenes-productos/18.png" },
 ];
 
-let idCarrito = [];
-localStorage.clear();
+/* let idCarrito = []; */
 
-
+if (localStorage.length > 0) {
+  var idCarrito = JSON.parse(localStorage.getItem("arreglo"));
+} else {
+  var idCarrito = [];
+}
 
 
 function cargarArticulos(articulos, id){
   let variable = document.getElementById(id);
   articulos.forEach(articulo =>{
-    variable.innerHTML+= `
+    variable.innerHTML += `
     <div class="col-lg-4 text-center product-item">
             <div class="product-title">
               <h5>${articulo.producto}</h5>
@@ -72,15 +75,12 @@ function cargarArticulosDelCarrito(articulos, id){
     // mensaje+= `${articulo.producto} $${articulo.precio}\n`;
     
     variable.innerHTML+= `
-    <p>${articulo.producto} $${articulo.precio}
-    <br>
-    </p>
-    
+    <p>${articulo.producto} $${articulo.precio}</p>
     `;
     total+=articulo.precio;
   })
   total = total.toFixed(2);
- mensaje+=`\nTotal: $${total}`
+  mensaje += `\nTotal: $${total}`
  variable.innerHTML+=`
  <div><p>${mensaje}</p></div>
  `
@@ -93,7 +93,7 @@ cargarArticulos(articulos, "contenedor");
 function eliminarElemento(){
   imagen = document.getElementById("contenedor");	
   if (!imagen){
-    console.log("El elemento selecionado no existe");
+    console.log("El elemento seleccionado no existe");
   } else {
     imagen.innerHTML= "";
   }}
@@ -121,27 +121,32 @@ function quitarCarrito() {
   let titulo = document.getElementById("titulo");
   titulo.innerHTML = "Carrito";
 
-  let boton = document.getElementById("divCarrito");
-  boton.innerHTML = "";
+  let botonNuevo = document.getElementById("divCarrito");
+  botonNuevo.innerHTML = `<button id="vaciarCarrito">Vaciar Carrito</button>`;
+
+  let vaciarCarrito = document.getElementById("vaciarCarrito");
+  vaciarCarrito.addEventListener("click",( )=> vaciarLocal());
+
 }
 
+function vaciarLocal() {
+  localStorage.clear();
+  let newText = document.getElementById("contenedorCarrito");
+  newText.innerHTML = "";
+}
 
 let botonCarrito = document.getElementById("idCarrito");
 botonCarrito.addEventListener("click",() => alertaPrueba());
 //     boton.addEventListener("click", () => ejecutar(item.id));
 
 
- 
 
-
-
- function ejecutar(id){
+function ejecutar(id){
   console.log(`El articulo ${id} ha sido agregado exitosamente`);
+  console.log(idCarrito);
   idCarrito.push(id);
-  localStorage.clear();
   localStorage.setItem("arreglo", JSON.stringify(idCarrito));
  }
-
 
 
 
