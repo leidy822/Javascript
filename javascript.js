@@ -113,9 +113,16 @@ function alertaPrueba(){
   cargarArticulosDelCarrito(arregloCarrito, "contenedorCarrito");
   console.log(arregloCarrito);
 
-
+  quitarCarrito();
 }
 
+function quitarCarrito() {
+  let titulo = document.getElementById("titulo");
+  titulo.innerHTML = "Carrito";
+
+  let boton = document.getElementById("divCarrito");
+  boton.innerHTML = "";
+}
 
 
 let botonCarrito = document.getElementById("idCarrito");
